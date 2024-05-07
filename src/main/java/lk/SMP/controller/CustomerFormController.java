@@ -53,6 +53,7 @@ public class CustomerFormController {
 
         setCellValueFactory();
         loadAllCustomers();
+        System.out.println("Check");
     }
     private void loadAllCustomers() {
         ObservableList<CustomerTm> obList = FXCollections.observableArrayList();
