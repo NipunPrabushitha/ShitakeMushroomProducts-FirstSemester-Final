@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.CustomerFormController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="943.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/canvas.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtCustomerId" layoutX="76.0" layoutY="190.0" onAction="#txtCustomerOnAction" prefHeight="44.0" prefWidth="271.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtContactNo" layoutX="76.0" layoutY="309.0" prefHeight="44.0" prefWidth="271.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtName" layoutX="577.0" layoutY="190.0" prefHeight="44.0" prefWidth="271.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtAddress" layoutX="577.0" layoutY="309.0" prefHeight="44.0" prefWidth="271.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TableView fx:id="tblCustomer" layoutX="27.0" layoutY="575.0" prefHeight="298.0" prefWidth="846.0">
+        <columns>
+            <TableColumn fx:id="tblId" prefWidth="180.0" text="ID" />
+            <TableColumn fx:id="tblName" prefWidth="263.0" text="NAME" />
+            <TableColumn fx:id="tblAddress" prefWidth="202.0" text="ADDRESS" />
+            <TableColumn fx:id="tblContactNumber" prefWidth="244.0" text="CONTACT NUMBER" />
+        </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="76.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="77.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT NO :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="581.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="577.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADDRESS">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="214.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER MANGEMENT">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="464.0" layoutY="483.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="saveBtn" stylesheets="@../CSS/form.css" text="SAVE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-save-24.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="744.0" layoutY="483.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="deleteBtn" stylesheets="@../CSS/form.css" text="DELETE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-delete-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="604.0" layoutY="483.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="updateBtn" stylesheets="@../CSS/form.css" text="UPDATE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-update-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="21.0" layoutY="20.0" onAction="#btnLogoutOnAction" prefHeight="44.0" prefWidth="128.0" text="Logout" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-back-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="77.0" layoutY="483.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="clearBtn" stylesheets="@../CSS/form.css" text="CLEAR" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-update-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

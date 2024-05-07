@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.HarvestFormController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="943.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/canvas.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtHarvestId" layoutX="65.0" layoutY="163.0" onAction="#txtHarvestOnAction" prefHeight="44.0" prefWidth="271.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtQuantity" layoutX="61.0" layoutY="276.0" prefHeight="44.0" prefWidth="139.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField fx:id="txtUnitPrice" layoutX="704.0" layoutY="369.0" prefHeight="44.0" prefWidth="139.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TableView fx:id="tblHarvest" layoutX="21.0" layoutY="615.0" prefHeight="269.0" prefWidth="858.0">
+         <columns>
+            <TableColumn fx:id="colHarvestId" prefWidth="108.0" text="HARVEST ID" />
+            <TableColumn fx:id="colFieldId" prefWidth="96.0" text="FIELD ID" />
+            <TableColumn fx:id="colCropType" prefWidth="127.0" text="CROP TYPE" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="123.0" text="UNIT PRICE" />
+            <TableColumn fx:id="colHarvestDate" prefWidth="152.0" text="HARVEST DATE" />
+            <TableColumn fx:id="colQuantity" prefWidth="130.0" text="QUANTITY (g)" />
+            <TableColumn fx:id="colWaste" prefWidth="121.0" text="WASTE(g)" />
+         </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="65.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HARVEST ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="62.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTITY (g)">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="704.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIELD ID :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="709.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNIT PRICE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="218.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HARVEST MANGEMENT">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="487.0" layoutY="532.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="saveBtn" stylesheets="@../CSS/form.css" text="SAVE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-save-24.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="760.0" layoutY="532.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="deleteBtn" stylesheets="@../CSS/form.css" text="DELETE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-delete-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="625.0" layoutY="532.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="updateBtn" stylesheets="@../CSS/form.css" text="UPDATE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-update-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="35.0" layoutY="32.0" onAction="#btnLogoutOnAction" prefHeight="44.0" prefWidth="128.0" text="Logout" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-back-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="33.0" layoutY="542.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="clearBtn" stylesheets="@../CSS/form.css" text="CLEAR" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-update-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbFieldName" focusColor="WHITE" labelFloat="true" layoutX="515.0" layoutY="155.0" onAction="#cmbFieldNameOnAction" prefHeight="44.0" prefWidth="139.0" unFocusColor="WHITE" />
+      <Text fill="WHITE" layoutX="515.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIELD NAME">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblFieldId" layoutX="791.0" layoutY="148.0" prefHeight="44.0" prefWidth="77.0" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <TextField fx:id="txtWaste" layoutX="61.0" layoutY="378.0" prefHeight="44.0" prefWidth="139.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Text fill="WHITE" layoutX="62.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WASTE (g)">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="585.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CROP TYPE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="682.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Label fx:id="lbtDate" layoutX="747.0" layoutY="83.0" prefHeight="28.0" prefWidth="110.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="txtCropType" layoutX="585.0" layoutY="267.0" prefHeight="44.0" prefWidth="171.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+   </children>
+</AnchorPane>

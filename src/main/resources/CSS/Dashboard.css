@@ -1,0 +1,23 @@
+.backdrop{
+    -fx-background: linear-gradient(to bottom, #ffffff 0%, #89d4e7 100%);
+}
+
+.textArea{
+    -fx-background-color: #708fd9;
+}
+
+.dashboard{
+    -fx-background-color: #eaebf1;
+}
+
+.manageBtn{
+    -fx-background-color: #ff9a00;
+}
+.backGround{
+    -fx-background-color: #7986d4;
+}
+
+
+.DASHBOARDBtn{
+    -fx-background-color: #e6d6c3;
+}

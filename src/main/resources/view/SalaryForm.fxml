@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.SalaryFormController">
+   <children>
+      <ImageView fitHeight="610.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/360_F_287113142_8XLkz9kGNKWdvazBEgl8GoymDG5YBsa9.jpg" />
+         </image>
+      </ImageView>
+      <TextField layoutX="424.0" layoutY="232.0" prefHeight="42.0" prefWidth="124.0" />
+      <TextField layoutX="69.0" layoutY="251.0" prefHeight="31.0" prefWidth="241.0" />
+      <TableView layoutX="69.0" layoutY="375.0" prefHeight="203.0" prefWidth="663.0">
+        <columns>
+            <TableColumn prefWidth="103.0" text="SALARY ID" />
+            <TableColumn prefWidth="116.0" text="EMPLOYEE ID" />
+            <TableColumn prefWidth="168.0" text="NAME" />
+            <TableColumn prefWidth="145.0" text="DATE" />
+            <TableColumn prefWidth="130.0" text="AMOUNT" />
+        </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="69.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALARY ID :- ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="425.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AMOUNT">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="72.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="69.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="308.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALARY MANAGE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="381.0" layoutY="312.0" styleClass="saveBtn" stylesheets="@../CSS/form.css" text="SAVE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-save-24.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="638.0" layoutY="312.0" styleClass="deleteBtn" stylesheets="@../CSS/form.css" text="DELETE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-delete-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="500.0" layoutY="312.0" styleClass="updateBtn" stylesheets="@../CSS/form.css" text="UPDATE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-update-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="39.0" layoutY="23.0" prefHeight="42.0" prefWidth="43.0" text=".">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-back-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="1.0" />
+         </font>
+      </JFXButton>
+      <ComboBox layoutX="71.0" layoutY="156.0" prefHeight="31.0" prefWidth="252.0" />
+      <Label layoutX="167.0" layoutY="71.0" prefHeight="22.0" prefWidth="98.0" />
+      <Text fill="WHITE" layoutX="424.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME :- ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="508.0" layoutY="154.0" prefHeight="30.0" prefWidth="241.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,26 @@
+.backdrop{
+    -fx-background: linear-gradient(to bottom, #b4c7e7 0%, #e7d8c9 100%);
+}
+
+.saveBtn{
+    -fx-background-color: #24A0ED;
+}
+
+
+.updateBtn{
+    -fx-background-color: #FF9D00;
+}
+
+
+.deleteBtn{
+    -fx-background-color: #FF0000;
+}
+
+.newBtn{
+    -fx-background-color: #10bc21;
+}
+
+.clearBtn{
+    -fx-background-color: #eacd26;
+}
+

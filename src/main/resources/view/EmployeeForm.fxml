@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.EmployeeFormController">
+   <children>
+      <ImageView fitHeight="610.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/360_F_287113142_8XLkz9kGNKWdvazBEgl8GoymDG5YBsa9.jpg" />
+         </image>
+      </ImageView>
+      <TextField layoutX="71.0" layoutY="116.0" prefHeight="31.0" prefWidth="252.0" />
+      <TextField layoutX="71.0" layoutY="188.0" prefHeight="31.0" prefWidth="252.0" />
+      <TextField layoutX="478.0" layoutY="116.0" prefHeight="31.0" prefWidth="252.0" />
+      <TextField layoutX="478.0" layoutY="188.0" prefHeight="31.0" prefWidth="252.0" />
+      <TableView layoutX="26.0" layoutY="383.0" prefHeight="203.0" prefWidth="748.0">
+        <columns>
+            <TableColumn prefWidth="83.0" text="ID" />
+            <TableColumn prefWidth="133.0" text="NAME" />
+            <TableColumn prefWidth="88.0" text="USER ID" />
+            <TableColumn prefWidth="152.0" text="CONTACT NUMBER" />
+            <TableColumn prefWidth="132.0" text="DEPARTMENT" />
+            <TableColumn prefWidth="74.0" text="FIELD ID" />
+            <TableColumn prefWidth="85.0" text="STATUS" />
+        </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="72.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="72.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT NO :-">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="478.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="478.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="221.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE MANGEMENT">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="415.0" layoutY="317.0" prefHeight="42.0" prefWidth="94.0" styleClass="saveBtn" stylesheets="@../CSS/form.css" text="SAVE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-save-24.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="674.0" layoutY="317.0" prefHeight="42.0" prefWidth="100.0" styleClass="deleteBtn" stylesheets="@../CSS/form.css" text="DELETE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-delete-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="537.0" layoutY="317.0" prefHeight="42.0" prefWidth="110.0" styleClass="updateBtn" stylesheets="@../CSS/form.css" text="UPDATE" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-update-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="39.0" layoutY="23.0" prefHeight="42.0" prefWidth="43.0" text=".">
+         <font>
+            <Font size="1.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/icons8-back-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TextField layoutX="71.0" layoutY="258.0" prefHeight="31.0" prefWidth="252.0" />
+      <Text fill="WHITE" layoutX="72.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPARTMENT">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField layoutX="478.0" layoutY="254.0" prefHeight="31.0" prefWidth="252.0" />
+      <Text fill="WHITE" layoutX="479.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIELD ID">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
