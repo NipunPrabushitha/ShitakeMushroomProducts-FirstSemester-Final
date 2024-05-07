@@ -74,4 +74,12 @@ public class DashBoardController {
         root.getChildren().clear();
         root.getChildren().add(rootNode);
     }
+
+    public void btnOrderOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/PlaceOrderForm.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

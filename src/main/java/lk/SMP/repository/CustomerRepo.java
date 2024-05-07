@@ -76,7 +76,26 @@ public class CustomerRepo {
     }
 
 
-    public static Customer searchById(String id) {
+    public static Customer searchById(String id) throws SQLException {
+        String sql = "SELECT * FROM customer WHERE customerId = ?";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setObject(1, id);
+
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            String cus_id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String tel = resultSet.getString(3);
+            String address = resultSet.getString(4);
+
+
+            Customer customer = new Customer(cus_id, name, tel, address);
+
+            return customer;
+        }
+
         return null;
     }
 }

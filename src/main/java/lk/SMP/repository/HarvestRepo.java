@@ -2,6 +2,7 @@ package lk.SMP.repository;
 
 import lk.SMP.db.DbConnection;
 import lk.SMP.model.Harvest;
+import lk.SMP.model.OrderDetail;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -156,4 +157,40 @@ public class HarvestRepo {
         return null;
     }
 
+
+    public static boolean update(List<OrderDetail> odList) throws SQLException {
+        for (OrderDetail od : odList) {
+            boolean isUpdateQty = updateQty(od.getHarvestId(), od.getQty());
+            if(!isUpdateQty) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean updateQty(String itemCode, int qty) throws SQLException {
+        String sql = "UPDATE harvest SET unitPrice_200g = unitPrice_200g - ? WHERE harvestId = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setInt(1, qty);
+        pstm.setString(2, itemCode);
+
+        return pstm.executeUpdate() > 0;
+    }
+
+    public static List<String> getCodes() throws SQLException {
+        String sql = "SELECT harvestId FROM harvest";
+        ResultSet resultSet = DbConnection.getInstance()
+                .getConnection()
+                .prepareStatement(sql)
+                .executeQuery();
+
+        List<String> codeList = new ArrayList<>();
+        while (resultSet.next()) {
+            codeList.add(resultSet.getString(1));
+        }
+        return codeList;
+    }
 }
