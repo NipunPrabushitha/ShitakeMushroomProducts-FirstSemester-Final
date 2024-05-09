@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="LodinForm" prefHeight="640.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.LodingFormController">
+    <children>
+        <AnchorPane fx:id="loding" opacity="0.0" prefHeight="640.0" prefWidth="836.0" styleClass="colorBackground" stylesheets="@../CSS/style.css" />
+        <AnchorPane layoutX="-14.0" prefHeight="640.0" prefWidth="853.0" styleClass="shadowed" stylesheets="@../CSS/style.css">
+            <children>
+            <ImageView fitHeight="569.0" fitWidth="510.0" layoutX="202.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/logo-no-background.png" />
+               </image>
+            </ImageView>
+                <ProgressIndicator layoutX="429.0" layoutY="390.0" prefHeight="59.0" prefWidth="52.0">
+                    <effect>
+                        <ColorAdjust brightness="1.0" contrast="-1.0" hue="0.86" saturation="-1.0" />
+                    </effect>
+                </ProgressIndicator>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

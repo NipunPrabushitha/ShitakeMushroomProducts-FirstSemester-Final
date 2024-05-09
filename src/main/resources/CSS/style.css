@@ -1,0 +1,103 @@
+.btn{
+    -fx-background-color: #4E3283;
+    -fx-font-size: 15px;
+    -fx-font-family: Dyuthi;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+
+}
+
+.lbl2{
+    -fx-text-fill: #4E3283;
+    -fx-font-size: 20px;
+    -fx-font-family: Dyuthi;
+}
+
+.lbl{
+    -fx-text-fill: #4E3283;
+    -fx-font-size: 30px;
+    -fx-font-family: Dyuthi;
+}
+
+.V_Box{
+    -fx-background-color: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-family:Dyuthi;
+    -fx-text-alignment: CENTER;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #ffffff;
+
+
+}
+.colorBackground{
+    -fx-background-color: linear-gradient( to right top,#B19CD9, #E0B0FF,#CF9CD9 ,#8D6EC7);
+
+}
+.shadowed {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 50, 0, 0, 0);
+
+}
+.lbls{
+    -fx-text-fill: linear-gradient( to right top,#ffffff, #E0B0FF,#ffffff ,#8D6EC7);
+    -fx-font-size: 130px;
+    -fx-font-family: NATS;
+
+}
+
+.lbl1{
+    -fx-text-fill: #4E3283;
+    -fx-font-size: 17px;
+    -fx-font-family: Dyuthi;
+}
+.VBox{
+    -fx-background-color: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-family: Dyuthi;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #ffffff;
+    -fx-border-style: solid;
+
+}
+.btn1{
+    -fx-background-color: #ba9ad0;
+    -fx-font-size: 16px;
+    -fx-font-family: Dyuthi;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #ba9ad0;
+}
+.VBox1{
+    -fx-background-color: #ffffff;
+    -fx-font-size: 17px;
+    -fx-font-family: Dyuthi;
+    -fx-text-fill: #4E3283;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #ffffff;
+    -fx-border-style: solid;
+
+}
+
+.VBox2{
+    -fx-background-color: #000000;
+    -fx-font-size: 17px;
+    -fx-font-family: Dyuthi;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #000000;
+    -fx-border-style: solid;
+
+}
+.test{
+    -fx-background-color: rgba(255, 255, 255, 0.82);
+}
+
+
+
+
