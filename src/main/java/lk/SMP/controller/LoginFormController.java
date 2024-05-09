@@ -8,9 +8,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import lk.SMP.Util.Regex;
 import lk.SMP.db.DbConnection;
 
 import java.io.IOException;
@@ -52,7 +54,11 @@ public class LoginFormController {
             String dbPw = resultSet.getString("password");
 
             if(pw.equals(dbPw)) {
-                navigateToTheDashboard();
+                if (isValied()) {
+                    navigateToTheDashboard();
+                }else {
+                    new Alert(Alert.AlertType.ERROR, "sorry! Unable to login").show();
+                }
             } else {
                 new Alert(Alert.AlertType.ERROR, "sorry! password is incorrect!").show();
             }
@@ -76,6 +82,20 @@ public class LoginFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setTitle("Dashboard Form");
+    }
+
+    @FXML
+    void txtPasswordAction(KeyEvent event) {
+        Regex.setTextColor(lk.SMP.Util.TextField.PASSWORD, txtPassword);
+    }
+    public boolean isValied(){
+        if (!Regex.setTextColor(lk.SMP.Util.TextField.NAME,txtUserName)) return false;
+        if (!Regex.setTextColor(lk.SMP.Util.TextField.PASSWORD,txtPassword)) return false;
+        return true;
+    }
+    @FXML
+    void txtUserNameAction(KeyEvent event) {
+        Regex.setTextColor(lk.SMP.Util.TextField.NAME, txtUserName);
     }
 
 }

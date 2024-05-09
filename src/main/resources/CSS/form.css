@@ -3,7 +3,7 @@
 }
 
 .saveBtn{
-    -fx-background-color: #24A0ED;
+    -fx-background-color: #0bbc0e;
 }
 
 
@@ -22,5 +22,9 @@
 
 .clearBtn{
     -fx-background-color: #eacd26;
+}
+
+.btnPlaceOrder{
+    -fx-background-color: #FF8C00;
 }
 

@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.SMP.db.DbConnection;
 import lk.SMP.model.*;
 import lk.SMP.model.Tm.CartTm;
 import lk.SMP.repository.CustomerRepo;
@@ -21,7 +22,9 @@ import lk.SMP.repository.OrderRepo;
 import lk.SMP.repository.PlaceOrderRepo;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -87,6 +90,8 @@ public class PlaceOrderFormController {
     @FXML
     private TextField txtQty;
 
+    private static int idCounter = 4;
+
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
     public void initialize() {
         setDate();
@@ -133,25 +138,64 @@ public class PlaceOrderFormController {
             throw new RuntimeException(e);
         }
     }
+   /* private void getCurrentOrderId() {
+        int currentId = idCounter;
+
+        String nextOrderId = generateNextOrderId(currentId);
+        lblOrderId.setText(nextOrderId);
+
+    }
+    private String generateNextOrderId(int currentId) {
+
+        if(currentId != 0 ) {
+           String customerId = String.format("O%04d", idCounter);
+            return customerId;
+        }
+        return "O0001";
+    }*/
+
     private void getCurrentOrderId() {
         try {
-            String currentId = OrderRepo.getCurrentId();
+            String orderId = OrderRepo.getCurrentId();
 
-            String nextOrderId = generateNextOrderId(currentId);
+            String nextOrderId = generateNextAssestId();
             lblOrderId.setText(nextOrderId);
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    private String generateNextOrderId(String currentId) {
-        if(currentId != null) {
-            String[] split = currentId.split("O00");  //" ", "2"
-            int idNum = Integer.parseInt(split[1]);
-            return "O00" + ++idNum;
+    public static String generateNextAssestId() throws SQLException {
+        Connection con = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT OrderId FROM orders ORDER BY OrderId DESC LIMIT 1";
+
+        ResultSet resultSet = con.createStatement().executeQuery(sql);
+        if(resultSet.next()) {
+            return splitOrderId(resultSet.getString(1));
+        }
+        return splitOrderId(null);
+    }
+
+    private static String splitOrderId(String string) {
+        if(string != null) {
+            String[] strings = string.split("O0");
+            int id = Integer.parseInt(strings[1]);
+            id++;
+            String ID = String.valueOf(id);
+            int length = ID.length();
+            if (length < 2){
+                return "O00"+id;
+            }else {
+                if (length < 3){
+                    return "O0"+id;
+                }else {
+                    return "O"+id;
+                }
+            }
         }
         return "O001";
     }
+
     private void setDate() {
         LocalDate now = LocalDate.now();
         lblOrderDate.setText(String.valueOf(now));
@@ -253,6 +297,7 @@ public class PlaceOrderFormController {
         try {
             boolean isPlaced = PlaceOrderRepo.placeOrder(po);
             if(isPlaced) {
+                idCounter++;
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Placed!").show();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Order Placed Unsuccessfully!").show();

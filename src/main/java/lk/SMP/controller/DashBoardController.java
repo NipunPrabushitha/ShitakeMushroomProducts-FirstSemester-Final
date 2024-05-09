@@ -1,22 +1,60 @@
 package lk.SMP.controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class DashBoardController {
 
+    public Label lblSetDate;
+    public Label lblSetTime;
     @FXML
     private AnchorPane root;
 
     @FXML
     private AnchorPane rootNode;
+
+    @FXML
+    void initialize() {
+        setDate();
+        setLocalTime();
+    }
+
+    private void setDate() {
+        LocalDate now = LocalDate.now();
+        lblSetDate.setText(String.valueOf(now));
+    }
+
+    private void setLocalTime() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss"); // Define format
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), e -> {
+                    LocalTime timeInSriLanka = LocalTime.now(); // Get current time
+                    String formattedTime = timeInSriLanka.format(formatter); // Format time
+                    lblSetTime.setText(formattedTime); // Set formatted time to label
+                })
+        );
+        timeline.setCycleCount(Animation.INDEFINITE); // Repeat indefinitely
+        timeline.play(); // Start the timeline
+
+
+    }
 
     @FXML
     void btnCustomerManageOnAction(ActionEvent event) {
@@ -81,5 +119,27 @@ public class DashBoardController {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void btnAddNewAccountOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/AddNewAccount.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void btnLogOutOnAction(ActionEvent actionEvent) {
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = (Stage) root.getScene().getWindow();
+
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("Login Form");
+        stage.centerOnScreen();
     }
 }

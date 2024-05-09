@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,19 +17,19 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3d3" height="195.0" layoutX="34.0" layoutY="18.0" opacity="0.52" stroke="BLACK" strokeType="INSIDE" width="491.0" />
-      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="935.0" layoutX="606.0" layoutY="30.0" opacity="0.73" stroke="BLACK" strokeType="INSIDE" width="937.0" />
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="935.0" layoutX="560.0" layoutY="30.0" opacity="0.73" stroke="BLACK" strokeType="INSIDE" width="937.0" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="717.0" layoutX="37.0" layoutY="227.0" opacity="0.12" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="488.0" />
       <JFXButton layoutX="117.0" layoutY="490.0" onAction="#btnAddSupplierOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="ADD SUPPLIER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="763.0" prefHeight="57.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="SUPPLIER MANAGEMENT" textOverrun="LEADING_WORD_ELLIPSIS">
+      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="763.0" prefHeight="57.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="SUPPLY" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <AnchorPane fx:id="root" layoutX="624.0" layoutY="46.0" prefHeight="900.0" prefWidth="900.0" styleClass="dashboard" stylesheets="@../CSS/Dashboard.css" />
+      <AnchorPane fx:id="root" layoutX="578.0" layoutY="46.0" prefHeight="900.0" prefWidth="900.0" styleClass="dashboard" stylesheets="@../CSS/Dashboard.css" />
       <JFXButton buttonType="RAISED" layoutX="118.0" layoutY="674.0" onAction="#btnStockMangementOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="STOCK" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -64,10 +65,55 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <JFXButton layoutX="1793.0" layoutY="139.0" onAction="#btnOrderOnAction" text="Button" textFill="WHITE">
+      <JFXButton layoutX="1563.0" layoutY="319.0" onAction="#btnOrderOnAction" prefHeight="137.0" prefWidth="305.0" styleClass="manageBtn" stylesheets="@../CSS/Dashboard.css" text="PLACE ORDER">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/PlaceOrderBtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="193.0" layoutY="865.0" onAction="#btnAddNewAccountOnAction" prefHeight="48.0" prefWidth="178.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="ADD ACCOUNT" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="180.0" layoutX="1533.0" layoutY="38.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="manageBtn" width="364.0" />
+      <Label fx:id="lblSetDate" layoutX="1657.0" layoutY="49.0" prefHeight="74.0" prefWidth="237.0">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSetTime" layoutX="1657.0" layoutY="129.0" prefHeight="74.0" prefWidth="237.0">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="74.0" fitWidth="64.0" layoutX="1573.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/date.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="64.0" layoutX="1573.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icon/clock.gif" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="1728.0" layoutY="904.0" onAction="#btnLogOutOnAction" prefHeight="67.0" prefWidth="165.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="LOGOUT" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/logOut.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
    </children>
 </AnchorPane>

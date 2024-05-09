@@ -16,11 +16,11 @@
             <Font name="System Bold" size="52.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUserName" layoutX="408.0" layoutY="226.0" opacity="0.74" prefHeight="36.0" prefWidth="269.0" promptText="Username" styleClass="txtField" stylesheets="@../CSS/login.css">
+      <TextField fx:id="txtUserName" layoutX="408.0" layoutY="226.0" onKeyReleased="#txtUserNameAction" opacity="0.74" prefHeight="36.0" prefWidth="269.0" promptText="Username" style="-fx-background-color: #e7dbc0;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
-      <TextField fx:id="txtPassword" layoutX="408.0" layoutY="303.0" opacity="0.74" prefHeight="36.0" prefWidth="269.0" promptText="Password" styleClass="txtField" stylesheets="@../CSS/Dashboard.css">
+      <TextField fx:id="txtPassword" layoutX="408.0" layoutY="303.0" onKeyReleased="#txtPasswordAction" opacity="0.74" prefHeight="36.0" prefWidth="269.0" promptText="Password" style="-fx-background-color: #e7dbc0;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></TextField>
