@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrderBill" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c748b586-0a84-42d8-bc64-96d39439addb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="218"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="776"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<parameter name="orderId" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    `ShitakeMushroomProducts`.orders.`orderId`,
+    `ShitakeMushroomProducts`.harvest.date,
+    `ShitakeMushroomProducts`.orders.`subTotal`,
+    `ShitakeMushroomProducts`.`orderAndHarvestInfo`.`harvestId`,
+    `ShitakeMushroomProducts`.`orderAndHarvestInfo`.quantity,
+    `ShitakeMushroomProducts`.`orderAndHarvestInfo`.`subItemTotal`,
+    `ShitakeMushroomProducts`.harvest.`cropType`,
+    `ShitakeMushroomProducts`.harvest.`unitPrice_200g`
+FROM 
+    `ShitakeMushroomProducts`.orders
+JOIN 
+    `ShitakeMushroomProducts`.`orderAndHarvestInfo` ON `ShitakeMushroomProducts`.orders.`orderId` = `ShitakeMushroomProducts`.`orderAndHarvestInfo`.`orderId`
+JOIN 
+    `ShitakeMushroomProducts`.harvest ON `ShitakeMushroomProducts`.`orderAndHarvestInfo`.`harvestId` = `ShitakeMushroomProducts`.harvest.`harvestId`
+    WHERE
+    `ShitakeMushroomProducts`.orders.`orderId`   =  $P{orderId} ]]>
+	</queryString>
+	<field name="orderId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="orderId"/>
+		<property name="com.jaspersoft.studio.field.label" value="orderId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="date"/>
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<field name="subTotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="subTotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="subTotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="harvestId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="harvestId"/>
+		<property name="com.jaspersoft.studio.field.label" value="harvestId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderAndHarvestInfo"/>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderAndHarvestInfo"/>
+	</field>
+	<field name="subItemTotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="subItemTotal"/>
+		<property name="com.jaspersoft.studio.field.label" value="subItemTotal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderAndHarvestInfo"/>
+	</field>
+	<field name="cropType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cropType"/>
+		<property name="com.jaspersoft.studio.field.label" value="cropType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<field name="unitPrice_200g" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="unitPrice_200g"/>
+		<property name="com.jaspersoft.studio.field.label" value="unitPrice_200g"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<group name="orderId">
+		<groupExpression><![CDATA[$F{orderId}]]></groupExpression>
+	</group>
+	<group name="date">
+		<groupExpression><![CDATA[$F{date}]]></groupExpression>
+	</group>
+	<group name="subTotal">
+		<groupExpression><![CDATA[$F{subTotal}]]></groupExpression>
+	</group>
+	<group name="harvestId">
+		<groupExpression><![CDATA[$F{harvestId}]]></groupExpression>
+	</group>
+	<group name="quantity">
+		<groupExpression><![CDATA[$F{quantity}]]></groupExpression>
+	</group>
+	<group name="subItemTotal">
+		<groupExpression><![CDATA[$F{subItemTotal}]]></groupExpression>
+	</group>
+	<group name="cropType">
+		<groupExpression><![CDATA[$F{cropType}]]></groupExpression>
+	</group>
+	<group name="unitPrice_200g">
+		<groupExpression><![CDATA[$F{unitPrice_200g}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="118" y="8" width="419" height="30" uuid="f2ac1d27-5ed9-40f3-b86f-4ef0d259c907"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHITAKE MUSHROOM PRODUCTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="36" width="395" height="25" uuid="90695444-3ce3-4e7f-ba81-18117b6f72cd"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Shitake Mushroom Lanka - Pvt Ltd, Divulapitiya, Sri Lanka.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="58" width="74" height="20" uuid="af30ca25-d35c-4c93-8c9e-307d026a41c9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[0786054430]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-5" y="86" width="570" height="1" backcolor="#030303" uuid="5e28c147-c5a0-4bcb-91db-9b0af8079082"/>
+			</rectangle>
+			<image>
+				<reportElement x="15" y="-18" width="104" height="98" uuid="80b822f9-6cca-4c20-aa23-d8d1119fe34d"/>
+				<imageExpression><![CDATA["/home/nipun/Desktop/ShitakeMushroomProducts/src/main/resources/Icon/logo-black.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="23" width="100" height="30" uuid="ada90ba9-a2d6-4b61-b161-e3bc7332f953"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="106" height="30" uuid="d9bb1813-65bc-4979-a7ba-a8f61d256bdb"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER ID :-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="21" width="128" height="30" uuid="bf4dd165-704e-4840-889a-ebf3c7114b58"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE & TIME :-]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="7" y="67" width="537" height="1" backcolor="#030303" uuid="14ee8bf2-4107-4433-a9b4-73b43685fca6"/>
+			</rectangle>
+			<textField>
+				<reportElement x="99" y="21" width="100" height="30" uuid="d871450c-4e3f-4683-8f66-156f94b82df9"/>
+				<textFieldExpression><![CDATA[$F{orderId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="7" y="23" width="537" height="1" backcolor="#030303" uuid="3f037af3-7d48-4369-93ba-ccddbae9139c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="12" y="0" width="100" height="30" uuid="dce5eb6d-bda4-4242-810a-49d8aae152dd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e9ec55c-fcb1-41c7-ac00-54f701636551"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="0" width="100" height="30" uuid="213cb679-e3a0-4f32-a378-e8ef58984c50">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="578fceff-8eae-491b-a8c9-adab1d809418"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="0" width="90" height="30" uuid="4de120af-766f-46dc-8abf-ab921efd131e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fdab3f78-ed4b-4b9b-bca1-50c2efe8b059"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="0" width="100" height="30" uuid="ff84466b-ffdf-404a-aa6d-dbd533edc645">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20334344-2a4c-4b74-9a16-f2d8fa8b6674"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="29714f6f-751b-4300-a2c4-b508fd7ca267">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="079e266a-1e02-4ecd-9d30-c215dbb62e73"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUB TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="0" width="100" height="30" uuid="8a1a6e42-6981-4a18-8c2a-e305c607dcab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7b08c47-3e02-4770-bdd9-8d77b26a2b67"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{harvestId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="15" width="542" height="11" uuid="a2cea5a3-2a29-4948-9a73-40a471d81381"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+----+-----+-----+-----+----+-----+-----+-----+----+-----+-----+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="1" width="100" height="30" uuid="f545cc23-476d-4a7e-b66f-5b94fd8760fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c14dece8-8e55-49e1-b928-6a6d109ece92"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cropType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="6" width="72" height="30" uuid="6a8a0790-9f33-4dcf-8184-881760171a6a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1baec58f-e255-46ed-8a60-43a1fca5130a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="5" width="100" height="30" uuid="0c7f3873-326e-42e3-a457-c21032aae887">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e6d2fb7-e442-4801-8b71-7ca67a8fea52"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{unitPrice_200g}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="5" width="100" height="30" uuid="19ce29e1-7c5c-4f65-80d5-855c9b806fc2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9ef810af-8d65-4ddc-b544-ec456936f856"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{subItemTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="444" y="3" width="100" height="30" uuid="d577ae45-6e0d-4a13-9e99-3f244bb7210e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{subTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="2" width="122" height="30" uuid="bf65ed37-1972-439b-b072-d1019a3d1912"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NET TOTAL ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="8" width="100" height="30" uuid="80b75967-c60f-421e-99b2-f981c4347e22"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rs.]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="118" y="8" width="314" height="30" uuid="6f78fd0c-b399-4aea-88c4-7c34d370ce11"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank You! Come Again.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="36" width="296" height="25" uuid="e00b1e95-c846-4ef4-90cf-46aad25e9d0e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Shitake Mushroom Lanka - Pvt Ltd, Divulapitiya, Sri Lanka.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -20,6 +20,10 @@ import lk.SMP.repository.CustomerRepo;
 import lk.SMP.repository.HarvestRepo;
 import lk.SMP.repository.OrderRepo;
 import lk.SMP.repository.PlaceOrderRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -27,9 +31,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class PlaceOrderFormController {
 
@@ -211,7 +213,7 @@ public class PlaceOrderFormController {
         String description = lblDescription.getText();
         int qty = Integer.parseInt(txtQty.getText());
         double unitPrice = Double.parseDouble(lblUnitPrice.getText());
-        double total = qty * unitPrice;
+        double total = (qty * unitPrice);
         JFXButton btnRemove = new JFXButton("remove");
         btnRemove.setCursor(Cursor.HAND);
 
@@ -306,10 +308,11 @@ public class PlaceOrderFormController {
             if(isPlaced) {
                 idCounter++;
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Placed!").show();
+                PrintBill();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Order Placed Unsuccessfully!").show();
             }
-        } catch (SQLException e) {
+        } catch (SQLException | JRException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
@@ -359,6 +362,29 @@ public class PlaceOrderFormController {
             }
             lblNetTotal.setText(String.valueOf(netTotal));
         }
+    @FXML
+    void btnBillOnAction(ActionEvent event) throws JRException, SQLException {
+       /* JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/report/OrderBill.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 
+        Map<String, Object> data = new HashMap<>();
+        data.put("orderId", lblOrderId.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(jasperReport, data, DbConnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint, false);*/
+    }
+
+    public void PrintBill() throws JRException, SQLException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/report/OrderBill.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("orderId", lblOrderId.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(jasperReport, data, DbConnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint, false);
+    }
 
 }

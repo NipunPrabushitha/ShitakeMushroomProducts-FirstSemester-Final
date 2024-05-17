@@ -142,7 +142,7 @@
          <Cursor fx:constant="HAND" />
       </cursor>
    </JFXButton>
-   <JFXButton buttonType="RAISED" layoutX="1176.0" layoutY="868.0" onAction="#btnBackOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #bdc3c7;" text="Back">
+   <JFXButton buttonType="RAISED" layoutX="1045.0" layoutY="868.0" onAction="#btnBackOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #bdc3c7;" text="Back">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor>
@@ -160,4 +160,5 @@
          <Font name="System Bold" size="28.0" />
       </font>
    </Label>
+   <JFXButton layoutX="1338.0" layoutY="873.0" onAction="#btnBillOnAction" prefHeight="50.0" prefWidth="131.0" style="-fx-background-color: red;" text="bill" />
 </AnchorPane>
