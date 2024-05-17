@@ -80,8 +80,8 @@ public class Regex {
             /*case PRICE:
                 filed = "^([0-9]){1,}[.]([0-9]){1,}$";
                 break;*/
-            case Password:
-                filed = "^(?=.[a-zA-Z])(?=.\\d)(?=.[@$!%?&])[A-Za-z\\d@$!%?&]{8,}$";
+            case PASSWORD:
+                //filed = "^(?=.[a-zA-Z])(?=.\\d)(?=.[@$!%?&])[A-Za-z\\d@$!%?&]{8,}$";
                 filed = "^\\d{4}$";
                 break;
         }
