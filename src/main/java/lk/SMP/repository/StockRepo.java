@@ -25,10 +25,10 @@ public class StockRepo {
 
         while (resultSet.next()) {
             String productId = resultSet.getString(1);
-            String name = resultSet.getString(2);
-            double quantity = Double.parseDouble(resultSet.getString(3));
+            double quantity = Double.parseDouble(resultSet.getString(2));
+            double unitPrice= Double.parseDouble(resultSet.getString(3));
             String expireDate = resultSet.getString(4);
-            double unitPrice= Double.parseDouble(resultSet.getString(5));
+            String name = resultSet.getString(5);
 
             Stock stock = new Stock(productId,name,quantity,expireDate,unitPrice);
             stockList.add(stock);

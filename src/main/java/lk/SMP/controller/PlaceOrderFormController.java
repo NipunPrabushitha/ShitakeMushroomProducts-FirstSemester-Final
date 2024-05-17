@@ -90,9 +90,13 @@ public class PlaceOrderFormController {
     @FXML
     private TextField txtQty;
 
+
+
     private static int idCounter = 4;
 
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
+
+
     public void initialize() {
         setDate();
         getCurrentOrderId();
@@ -176,7 +180,7 @@ public class PlaceOrderFormController {
         return splitOrderId(null);
     }
 
-    private static String splitOrderId(String string) {
+    static String splitOrderId(String string) {
         if(string != null) {
             String[] strings = string.split("O0");
             int id = Integer.parseInt(strings[1]);
@@ -275,8 +279,9 @@ public class PlaceOrderFormController {
         String orderId = lblOrderId.getText();
         String cusId = cmbCustomerId.getValue();
         Date date = Date.valueOf(LocalDate.now());
+        double subTotal = Double.parseDouble(lblNetTotal.getText());
 
-        var order = new Order(orderId, cusId, date);
+        var order = new Order(orderId, cusId, date ,subTotal);
 
         List<OrderDetail> odList = new ArrayList<>();
 
@@ -287,7 +292,9 @@ public class PlaceOrderFormController {
                     orderId,
                     tm.getCode(),
                     tm.getQty(),
-                    tm.getUnitPrice()
+                    tm.getUnitPrice(),
+                    tm.getTotal()
+
             );
 
             odList.add(od);
@@ -352,5 +359,6 @@ public class PlaceOrderFormController {
             }
             lblNetTotal.setText(String.valueOf(netTotal));
         }
+
 
 }

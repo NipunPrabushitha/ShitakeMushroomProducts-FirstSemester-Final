@@ -19,28 +19,28 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3d3" height="195.0" layoutX="34.0" layoutY="18.0" opacity="0.52" stroke="BLACK" strokeType="INSIDE" width="491.0" />
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="935.0" layoutX="560.0" layoutY="30.0" opacity="0.73" stroke="BLACK" strokeType="INSIDE" width="937.0" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="717.0" layoutX="37.0" layoutY="227.0" opacity="0.12" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="488.0" />
-      <JFXButton layoutX="117.0" layoutY="490.0" onAction="#btnAddSupplierOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="ADD SUPPLIER">
+      <JFXButton layoutX="117.0" layoutY="451.0" onAction="#btnAddSupplierOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="ADD SUPPLIER">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="763.0" prefHeight="57.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="SUPPLY" textOverrun="LEADING_WORD_ELLIPSIS">
+      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="671.0" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="SUPPLY" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
       <AnchorPane fx:id="root" layoutX="578.0" layoutY="46.0" prefHeight="900.0" prefWidth="900.0" styleClass="dashboard" stylesheets="@../CSS/Dashboard.css" />
-      <JFXButton buttonType="RAISED" layoutX="118.0" layoutY="674.0" onAction="#btnStockMangementOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="STOCK" textOverrun="LEADING_WORD_ELLIPSIS">
+      <JFXButton buttonType="RAISED" layoutX="118.0" layoutY="596.0" onAction="#btnStockMangementOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="STOCK" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="118.0" layoutY="584.0" onAction="#btnHarvestManagementOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="HARVEST" textOverrun="LEADING_WORD_ELLIPSIS">
+      <JFXButton buttonType="RAISED" layoutX="118.0" layoutY="525.0" onAction="#btnHarvestManagementOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="HARVEST" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="408.0" onAction="#btnCustomerManageOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="CUSTOMER" textOverrun="LEADING_WORD_ELLIPSIS">
+      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="383.0" onAction="#btnCustomerManageOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="CUSTOMER" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -77,7 +77,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="193.0" layoutY="865.0" onAction="#btnAddNewAccountOnAction" prefHeight="48.0" prefWidth="178.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="ADD ACCOUNT" textOverrun="LEADING_WORD_ELLIPSIS">
+      <JFXButton buttonType="RAISED" layoutX="181.0" layoutY="881.0" onAction="#btnAddNewAccountOnAction" prefHeight="48.0" prefWidth="178.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="ADD ACCOUNT" textOverrun="LEADING_WORD_ELLIPSIS">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -114,6 +114,16 @@
                </image>
             </ImageView>
          </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="741.0" onAction="#btnSalaryMangementOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="SALARY " textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="116.0" layoutY="809.0" onAction="#btnEmployeeMangeOnAction" prefHeight="48.0" prefWidth="327.0" styleClass="manageBtn" stylesheets="@../CSS/form.css" text="EMPLOYEE" textOverrun="LEADING_WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </JFXButton>
    </children>
 </AnchorPane>

@@ -68,8 +68,8 @@ public class StockMangementFormController {
     private TextField txtUnitPrice;
 
     public void initialize() {
-        /*setCellValueFactory();
-        loadAllSuppliers();*/
+        setCellValueFactory();
+        loadAllSuppliers();
     }
     private void loadAllSuppliers() {
         ObservableList<StockTm> obList = FXCollections.observableArrayList();

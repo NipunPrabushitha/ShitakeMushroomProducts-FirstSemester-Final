@@ -110,7 +110,7 @@ public class HarvestRepo {
     }
 
     public static boolean update(Harvest harvest) throws SQLException {
-        String sql = "UPDATE harvest SET cropType = ?, quantity = ?, fieldId = ?, unitPrice_200g =  ?, waste = ?   WHERE harvestId = ?";
+        String sql = "UPDATE harvest SET cropType = ?, quantityOnHand = ?, fieldId = ?, unitPrice_200g =  ?, waste = ?   WHERE harvestId = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -192,5 +192,20 @@ public class HarvestRepo {
             codeList.add(resultSet.getString(1));
         }
         return codeList;
+    }
+
+    public static List<String> getfieldId() throws SQLException {
+        String sql = "SELECT cropType FROM field";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<String> idList = new ArrayList<>();
+        while (resultSet.next()) {
+            idList.add(resultSet.getString(1));
+        }
+        return idList;
     }
 }

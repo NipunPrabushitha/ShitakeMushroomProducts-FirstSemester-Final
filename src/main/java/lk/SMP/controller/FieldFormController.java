@@ -3,7 +3,9 @@ package lk.SMP.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.SMP.Util.Regex;
 import lk.SMP.db.DbConnection;
 
 import java.sql.Connection;
@@ -109,5 +111,23 @@ public class FieldFormController {
             new Alert(Alert.AlertType.INFORMATION,"Customer ID Not Found!");
         }
     }
+    public boolean isValid(){
+        boolean isIdValid = Regex.setTextColor(lk.SMP.Util.TextField.IDA, txtFieldId);
+        boolean isSizeValid = Regex.setTextColor(lk.SMP.Util.TextField.NON, txtSize);
+        boolean isCropTypeValid = Regex.setTextColor(lk.SMP.Util.TextField.NON, txtCropType);
 
+        return isIdValid && isSizeValid && isCropTypeValid;
+    }
+
+    public void FieldIdOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.IDA, txtFieldId);
+    }
+
+    public void SizeOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.NON, txtSize);
+    }
+
+    public void CropTypeOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.NON, txtCropType);
+    }
 }

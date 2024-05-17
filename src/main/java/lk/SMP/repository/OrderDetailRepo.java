@@ -19,7 +19,7 @@ public class OrderDetailRepo {
     }
 
     private static boolean save(OrderDetail od) throws SQLException {
-        String sql = "INSERT INTO orderAndHarvestInfo VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO orderAndHarvestInfo VALUES(?, ?, ?, ?,?)";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -28,6 +28,7 @@ public class OrderDetailRepo {
         pstm.setString(2, od.getHarvestId());
         pstm.setInt(3, od.getQty());
         pstm.setDouble(4, od.getUnitPrice());
+        pstm.setDouble(5, od.getSubItemTotal());
 
         return pstm.executeUpdate() > 0;    //false ->  |
     }

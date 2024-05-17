@@ -11,12 +11,12 @@
         <AnchorPane fx:id="loding" opacity="0.0" prefHeight="640.0" prefWidth="836.0" styleClass="colorBackground" stylesheets="@../CSS/style.css" />
         <AnchorPane layoutX="-14.0" prefHeight="640.0" prefWidth="853.0" styleClass="shadowed" stylesheets="@../CSS/style.css">
             <children>
-            <ImageView fitHeight="569.0" fitWidth="510.0" layoutX="202.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="569.0" fitWidth="510.0" layoutX="193.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icon/logo-no-background.png" />
                </image>
             </ImageView>
-                <ProgressIndicator layoutX="429.0" layoutY="390.0" prefHeight="59.0" prefWidth="52.0">
+                <ProgressIndicator layoutX="420.0" layoutY="489.0" prefHeight="59.0" prefWidth="52.0">
                     <effect>
                         <ColorAdjust brightness="1.0" contrast="-1.0" hue="0.86" saturation="-1.0" />
                     </effect>

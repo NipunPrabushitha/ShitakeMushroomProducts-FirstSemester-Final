@@ -13,4 +13,5 @@ public class Order {
     private String orderId;
     private String customerId;
     private Date date;
+    private double netTotal;
 }

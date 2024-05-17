@@ -4,15 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Employee {
+public class Salary {
+    private String salaryId;
+    private String amount;
+    private Date paymentDate;
     private String employeeId;
-    private String name;
-    private String contactNumber;
-    private String fieldId;
-    private String userId;
+
+
+
 
 }

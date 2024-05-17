@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -13,50 +12,55 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.SalaryFormController">
+<AnchorPane fx:id="root" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.SMP.controller.EmployeeFormController">
    <children>
       <ImageView fitHeight="900.0" fitWidth="943.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icon/canvas.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtSalaryId" layoutX="83.0" layoutY="337.0" onAction="#txtHarvestOnAction" prefHeight="50.0" prefWidth="275.0">
+      <TextField fx:id="txtEmployeeId" layoutX="76.0" layoutY="190.0" onAction="#txtEmployeeOnAction" onKeyReleased="#EmployeeIdOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtAmount" layoutX="597.0" layoutY="347.0" prefHeight="44.0" prefWidth="156.0">
+      <TextField fx:id="txtContactNo" layoutX="76.0" layoutY="285.0" onKeyReleased="#ContactOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TableView fx:id="tblSalary" layoutX="21.0" layoutY="615.0" prefHeight="269.0" prefWidth="858.0">
-         <columns>
-            <TableColumn fx:id="colSalary" prefWidth="196.0" text="SALARY ID" />
-            <TableColumn fx:id="colEmployee" prefWidth="178.0" text="EMPLOYEE ID" />
-            <TableColumn fx:id="colPaymentDate" prefWidth="195.0" text="PAYMENT DATE" />
-            <TableColumn fx:id="colAmount" prefWidth="288.0" text="AMOUNT" />
-         </columns>
+      <TextField fx:id="txtName" layoutX="577.0" layoutY="190.0" onKeyReleased="#NameOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TableView fx:id="tblEmployee" layoutX="27.0" layoutY="575.0" prefHeight="298.0" prefWidth="846.0">
+        <columns>
+            <TableColumn fx:id="colEmployeeId" prefWidth="141.0" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="248.0" text="NAME" />
+            <TableColumn fx:id="colContactNumber" prefWidth="196.0" text="CONTACT NUMBER" />
+            <TableColumn fx:id="colFieldId" prefWidth="150.0" text="FIELD ID" />
+            <TableColumn fx:id="colUserId" prefWidth="110.0" text="USER ID" />
+        </columns>
       </TableView>
-      <Text fill="WHITE" layoutX="83.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALARY ID">
+      <Text fill="WHITE" layoutX="76.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="598.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AMOUNT">
+      <Text fill="WHITE" layoutX="77.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTACT NO :-">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="276.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE ID">
+      <Text fill="WHITE" layoutX="581.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="218.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALARY MANAGEMENT">
+      <Text fill="WHITE" layoutX="194.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE MANAGEMENT" wrappingWidth="540.328125">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Text>
-      <JFXButton layoutX="487.0" layoutY="532.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="saveBtn" stylesheets="@../CSS/form.css" text="SAVE" textFill="WHITE">
+      <JFXButton layoutX="464.0" layoutY="483.0" onAction="#btnSaveOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="saveBtn" stylesheets="@../CSS/form.css" text="SAVE" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -68,7 +72,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="760.0" layoutY="532.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="deleteBtn" stylesheets="@../CSS/form.css" text="DELETE" textFill="WHITE">
+      <JFXButton layoutX="744.0" layoutY="483.0" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="deleteBtn" stylesheets="@../CSS/form.css" text="DELETE" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,7 +84,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="625.0" layoutY="532.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="updateBtn" stylesheets="@../CSS/form.css" text="UPDATE" textFill="WHITE">
+      <JFXButton layoutX="604.0" layoutY="483.0" onAction="#btnUpdateOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="updateBtn" stylesheets="@../CSS/form.css" text="UPDATE" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -92,7 +96,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="35.0" layoutY="32.0" onAction="#btnLogoutOnAction" prefHeight="44.0" prefWidth="128.0" text="Logout" textFill="WHITE">
+      <JFXButton layoutX="21.0" layoutY="20.0" onAction="#btnLogoutOnAction" prefHeight="44.0" prefWidth="128.0" text="Logout" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -104,7 +108,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="33.0" layoutY="542.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="clearBtn" stylesheets="@../CSS/form.css" text="CLEAR" textFill="WHITE">
+      <JFXButton layoutX="77.0" layoutY="483.0" onAction="#btnClearOnAction" prefHeight="50.0" prefWidth="110.0" styleClass="clearBtn" stylesheets="@../CSS/form.css" text="CLEAR" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -116,24 +120,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <JFXComboBox fx:id="vmbEmployeeName" focusColor="WHITE" labelFloat="true" layoutX="74.0" layoutY="180.0" onAction="#cmbFEmployeeNameOnAction" prefHeight="44.0" prefWidth="139.0" unFocusColor="WHITE" />
-      <Text fill="WHITE" layoutX="74.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE NAME">
+      <JFXComboBox fx:id="cmbUserId" focusColor="WHITE" layoutX="76.0" layoutY="379.0" prefHeight="44.0" prefWidth="160.0" unFocusColor="WHITE" />
+      <Text fill="WHITE" layoutX="79.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USER ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Label fx:id="lblEmployeeId" layoutX="392.0" layoutY="188.0" prefHeight="44.0" prefWidth="128.0" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Text fill="WHITE" layoutX="649.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE :-">
+      <JFXComboBox fx:id="cmbFieldId" focusColor="WHITE" layoutX="592.0" layoutY="290.0" prefHeight="44.0" prefWidth="160.0" unFocusColor="WHITE" />
+      <Text fill="WHITE" layoutX="595.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIELD ID">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Label fx:id="lbtDate" layoutX="714.0" layoutY="112.0" prefHeight="28.0" prefWidth="110.0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Label>
    </children>
 </AnchorPane>

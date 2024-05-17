@@ -113,16 +113,26 @@ public class DashBoardController {
         root.getChildren().add(rootNode);
     }
 
-    public void btnOrderOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/PlaceOrderForm.fxml"));
+    public void btnOrderOnAction(ActionEvent actionEvent) {
+        AnchorPane root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/view/PlaceOrderForm.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
     }
 
-    public void btnAddNewAccountOnAction(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/view/AddNewAccount.fxml"));
+    public void btnAddNewAccountOnAction(ActionEvent actionEvent) {
+        AnchorPane root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/view/AddNewAccount.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -141,5 +151,29 @@ public class DashBoardController {
         stage.setScene(new Scene(anchorPane));
         stage.setTitle("Login Form");
         stage.centerOnScreen();
+    }
+
+    public void btnSalaryMangementOnAction(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SalaryForm.fxml"));
+        Parent rootNode = null;
+        try {
+            rootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        root.getChildren().clear();
+        root.getChildren().add(rootNode);
+    }
+
+    public void btnEmployeeMangeOnAction(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/EmployeesForm.fxml"));
+        Parent rootNode = null;
+        try {
+            rootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        root.getChildren().clear();
+        root.getChildren().add(rootNode);
     }
 }

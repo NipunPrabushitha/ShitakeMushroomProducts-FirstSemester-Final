@@ -20,19 +20,19 @@
             <Image url="@../Icon/360_F_287113142_8XLkz9kGNKWdvazBEgl8GoymDG5YBsa9.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txtFieldId" layoutX="73.0" layoutY="134.0" onAction="#txtFieldManageOnAction" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtFieldId" layoutX="73.0" layoutY="134.0" onAction="#txtFieldManageOnAction" onKeyReleased="#FieldIdOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtSize" layoutX="73.0" layoutY="229.0" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtSize" layoutX="73.0" layoutY="229.0" onKeyReleased="#SizeOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtCropType" layoutX="609.0" layoutY="134.0" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtCropType" layoutX="609.0" layoutY="134.0" onKeyReleased="#CropTypeOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtSoilType" layoutX="609.0" layoutY="229.0" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtSoilType" layoutX="609.0" layoutY="229.0" onKeyReleased="#SoilTypeOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>

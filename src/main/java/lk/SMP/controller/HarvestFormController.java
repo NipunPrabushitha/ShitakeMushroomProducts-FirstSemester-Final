@@ -174,7 +174,6 @@ public class HarvestFormController {
         String cropType = txtCropType.getText();
         double quantity = Double.parseDouble(txtQuantity.getText());
         Date harvestDate = Date.valueOf(lbtDate.getText());
-        harvestDate = Date.valueOf("2024-12-12");
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         double waste = Double.parseDouble(txtWaste.getText());
         String fieldId = lblFieldId.getText();
@@ -227,11 +226,14 @@ public class HarvestFormController {
         String harvestId = txtHarvestId.getText();
         try {
             Harvest harvest = HarvestRepo.searchById(harvestId);
-            txtCropType.setText(harvest.getCropType());
-            txtQuantity.setText(String.valueOf(harvest.getQuantity()));
-            lblFieldId.setText(harvest.getFieldId());
-            txtUnitPrice.setText(String.valueOf(harvest.getUnitPrice()));
-            txtWaste.setText(String.valueOf(harvest.getWaste()));
+            if (harvest != null) {
+                txtCropType.setText(harvest.getCropType());
+                txtQuantity.setText(String.valueOf(harvest.getQuantity()));
+                lblFieldId.setText(harvest.getFieldId());
+                txtUnitPrice.setText(String.valueOf(harvest.getUnitPrice()));
+                txtWaste.setText(String.valueOf(harvest.getWaste()));
+            }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

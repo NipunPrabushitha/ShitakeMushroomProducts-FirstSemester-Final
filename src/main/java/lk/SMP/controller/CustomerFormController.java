@@ -11,8 +11,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.SMP.Util.Regex;
 import lk.SMP.model.Customer;
 import lk.SMP.model.Tm.CustomerTm;
 import lk.SMP.db.DbConnection;
@@ -135,29 +137,37 @@ public class CustomerFormController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String id = txtCustomerId.getText();
-        String name = txtName.getText();
-        String contact = txtContactNo.getText();
-        String address = txtAddress.getText();
+        if (isValid()) {
+            String id = txtCustomerId.getText();
+            String name = txtName.getText();
+            String contact = txtContactNo.getText();
+            String address = txtAddress.getText();
 
-        String sql = "INSERT INTO customer VALUES(?,?,?,?)";
+            String sql = "INSERT INTO customer VALUES(?,?,?,?)";
 
-        try {
-            Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement(sql);
+            try {
+                Connection connection = DbConnection.getInstance().getConnection();
+                PreparedStatement pstm = connection.prepareStatement(sql);
 
-            pstm.setString(1,id);
-            pstm.setString(2,name);
-            pstm.setString(3,contact);
-            pstm.setString(4,address);
+                pstm.setString(1, id);
+                pstm.setString(2, name);
+                pstm.setString(3, contact);
+                pstm.setString(4, address);
 
-            boolean isSaved = pstm.executeUpdate() > 0;
-            if (isSaved) {
-                new Alert(Alert.AlertType.INFORMATION, "Customer Saved Successfully").show();
+                boolean isSaved = pstm.executeUpdate() > 0;
+                if (isSaved) {
+                    new Alert(Alert.AlertType.INFORMATION, "Customer Saved Successfully").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
+        }else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Validation Error");
+                alert.setHeaderText("Validation Failed");
+                alert.setContentText("Please fill in all fields correctly.");
+                alert.showAndWait();
+            }
     }
 
     @FXML
@@ -208,5 +218,28 @@ public class CustomerFormController {
             new Alert(Alert.AlertType.INFORMATION,"Customer ID Not Found!");
         }
     }
+    public boolean isValid() {
+        boolean isIdValid = Regex.setTextColor(lk.SMP.Util.TextField.IDC, txtCustomerId);
+        boolean isNameValid = Regex.setTextColor(lk.SMP.Util.TextField.NAME, txtName);
+        boolean isAddressValid = Regex.setTextColor(lk.SMP.Util.TextField.ADDRESS, txtAddress);
+        boolean isContactValid = Regex.setTextColor(lk.SMP.Util.TextField.CONTACT, txtContactNo);
 
+        return isIdValid && isNameValid && isAddressValid && isContactValid;
+    }
+
+    public void CustomerIdOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.IDC, txtCustomerId);
+    }
+
+    public void ContactOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.CONTACT, txtContactNo);
+    }
+
+    public void CustomerNameOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.NAME, txtName);
+    }
+
+    public void AddressOnKeyRelesed(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.SMP.Util.TextField.ADDRESS, txtAddress);
+    }
 }

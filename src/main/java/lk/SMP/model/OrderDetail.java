@@ -12,4 +12,5 @@ public class OrderDetail {
     private String harvestId;
     private int qty;
     private double unitPrice;
+    private double subItemTotal;
 }

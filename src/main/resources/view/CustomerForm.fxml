@@ -18,19 +18,19 @@
             <Image url="@../Icon/canvas.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtCustomerId" layoutX="76.0" layoutY="190.0" onAction="#txtCustomerOnAction" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtCustomerId" layoutX="76.0" layoutY="190.0" onAction="#txtCustomerOnAction" onKeyReleased="#CustomerIdOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtContactNo" layoutX="76.0" layoutY="309.0" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtContactNo" layoutX="76.0" layoutY="309.0" onKeyReleased="#ContactOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtName" layoutX="577.0" layoutY="190.0" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtName" layoutX="577.0" layoutY="190.0" onKeyReleased="#CustomerNameOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="txtAddress" layoutX="577.0" layoutY="309.0" prefHeight="44.0" prefWidth="271.0">
+      <TextField fx:id="txtAddress" layoutX="577.0" layoutY="309.0" onKeyReleased="#AddressOnKeyRelesed" prefHeight="44.0" prefWidth="271.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
@@ -62,7 +62,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="214.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER MANGEMENT">
+      <Text fill="WHITE" layoutX="194.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER MANAGEMENT" wrappingWidth="540.328125">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
